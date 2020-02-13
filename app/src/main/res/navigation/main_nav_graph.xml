@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/firstFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.nanaten.navigation_and_toolbar_sample.FirstFragment"
+        android:label="First View"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_first_to_second"
+            app:destination="@id/nested_nav_graph"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_first_to_third"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_first_to_fourth"
+            app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_first_to_fifth"
+            app:destination="@id/fifthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.nanaten.navigation_and_toolbar_sample.ThirdFragment"
+        android:label="Third View"
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_back_to_first"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.nanaten.navigation_and_toolbar_sample.FourthFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_fourth">
+        <action
+            android:id="@+id/action_back_to_first"
+            app:destination="@id/firstFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.nanaten.navigation_and_toolbar_sample.FifthFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_fifth">
+        <action
+            android:id="@+id/action_back_to_first"
+            app:destination="@id/firstFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <navigation
+        android:id="@+id/nested_nav_graph"
+        app:startDestination="@id/secondFragment">
+        <fragment
+            android:id="@+id/secondFragment"
+            android:name="com.nanaten.navigation_and_toolbar_sample.SecondFragment"
+            android:label="Second View"
+            tools:layout="@layout/fragment_second">
+            <action
+                android:id="@+id/action_back_to_first"
+                app:destination="@id/main_nav_graph"
+                app:popUpTo="@id/nested_nav_graph"
+                app:popUpToInclusive="true"/>
+        </fragment>
+    </navigation>
+</navigation>

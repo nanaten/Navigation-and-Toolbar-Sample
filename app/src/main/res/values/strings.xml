@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Navigation-And-Toolbar-Sample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="don_t_show_upicon">Don\'t show UpIcon</string>
+    <string name="don_t_show_toolbar">Don\'t show Toolbar</string>
+    <string name="input_title">タイトルを入力</string>
+    <string name="change_title_by_navgraph">Change Title by NavGraph</string>
+    <string name="change_title_by_listener">Change Title by DestinationChangedListener</string>
+    <string name="title_was_changed_by_listener">Title was Changed by DestinationChangedListener</string>
+    <string name="title_was_changed_by_navgraph">Title was Changed by NavGraph</string>
+    <string name="back">BACK</string>
+</resources>
